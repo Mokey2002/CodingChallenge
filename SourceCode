@@ -1,0 +1,18 @@
+__author__ = 'Eduardo'
+
+import randomdotorg
+from PIL import Image
+
+number = randomdotorg.RandomDotOrg("example")
+number.get_quota()
+x =  number.randrange(1,256,1,10)
+z = x[0]
+
+img = Image.new( 'RGB', (128,128), "black") # create a new black image
+pixels = img.load() # create the pixel map
+
+for i in range(img.size[0]):    # for every pixel:
+    for j in range(img.size[1]):
+        pixels[i,j] = (i, j, z) # set the colour accordingly
+
+img.show()
